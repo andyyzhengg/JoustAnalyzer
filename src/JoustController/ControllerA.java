@@ -9,7 +9,7 @@ import JoustModel.Model;
 public abstract class ControllerA {
 	
 	public final String calculate(List<CharSequence> opponentDeckList, List<CharSequence> playerDeckList) {
-		return Double.toString(Model.compare(createDeck(playerDeckList), createDeck(opponentDeckList)));
+		return "The probability of victory is: " + Double.toString(Model.compare(createDeck(playerDeckList), createDeck(opponentDeckList)) * 100) + "%!";
 	}
 	public final List<Card> createDeck(List<CharSequence> paragraphText) {
 		List<Card> ret = new ArrayList<Card>();
