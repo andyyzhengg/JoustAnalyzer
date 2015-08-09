@@ -1,7 +1,6 @@
 package JoustData;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import org.json.*;
@@ -33,8 +32,8 @@ public class JSONCardParser {
 				JSONArray set = obj.getJSONArray(setName);
 				for(int j = 0; j < set.length(); j++) {
 					JSONObject card = set.getJSONObject(j);
-					if(card.getString("name").equals(cardName)) {
-						return new Card(cardName, Integer.parseInt(card.get("cost").toString()), 1);
+					if(card.getString("name").equals(cardName) && !card.getString("type").equals("Hero")) {
+						return new Card(cardName, Integer.parseInt(card.get("cost").toString()), 0);
 					}
 				}
 			}

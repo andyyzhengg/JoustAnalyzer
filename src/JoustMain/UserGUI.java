@@ -1,7 +1,7 @@
 package JoustMain;
 
 import JoustController.ControllerA;
-import JoustController.NoJSONController;
+import JoustController.JSONController;
 import JoustModel.Model;
 import JoustView.CopyPasta;
 import javafx.application.Application;
@@ -28,7 +28,7 @@ public class UserGUI extends Application {
 	
 	@Override
 	public void start(Stage window) {
-		controller = new NoJSONController();
+		controller = new JSONController();
 		view = new CopyPasta();
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
