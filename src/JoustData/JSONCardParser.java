@@ -32,8 +32,13 @@ public class JSONCardParser {
 				JSONArray set = obj.getJSONArray(setName);
 				for(int j = 0; j < set.length(); j++) {
 					JSONObject card = set.getJSONObject(j);
-					if(card.getString("name").equals(cardName) && !card.getString("type").equals("Hero")) {
-						return new Card(cardName, Integer.parseInt(card.get("cost").toString()), 0);
+					if(card.getString("name").equals(cardName)) {
+						try {
+							String cost = card.get("cost").toString();
+							return new Card(cardName, Integer.parseInt(cost), 0);
+						} catch (JSONException e) {
+							continue;
+						}
 					}
 				}
 			}
