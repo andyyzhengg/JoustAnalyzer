@@ -9,7 +9,7 @@ import JoustModel.Model;
 public abstract class ControllerA {
 	
 	public final String calculate(List<CharSequence> opponentDeckList, List<CharSequence> playerDeckList) {
-		return Double.toString(Model.compare(createDeck(opponentDeckList), createDeck(playerDeckList)));
+		return Double.toString(Model.compare(createDeck(playerDeckList), createDeck(opponentDeckList)));
 	}
 	public final List<Card> createDeck(List<CharSequence> paragraphText) {
 		List<Card> ret = new ArrayList<Card>();
