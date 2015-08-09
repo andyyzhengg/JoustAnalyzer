@@ -1,4 +1,4 @@
-package JoustGui;
+package JoustView;
 
 public class UserFrame {
 
