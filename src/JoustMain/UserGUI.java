@@ -60,8 +60,7 @@ public class UserGUI extends Application {
 		calculateButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				controller.calculate(opponentDeckList.getParagraphs(), playerDeckList.getParagraphs());	
-				//result.setText();
+				result.setText(controller.calculate(opponentDeckList.getParagraphs(), playerDeckList.getParagraphs()));
 			}
 		});
 		

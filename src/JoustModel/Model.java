@@ -11,13 +11,12 @@ public class Model {
 
 	public static List<Integer> convertDeck(List<Card> deck){
 		List<Integer> fullDeck = new ArrayList();
-		for(Iterator<Card> deckIter = deck.iterator(); deckIter.hasNext();){
-			Card card = deckIter.next();
+		for(Card card : deck) {
 			for(int i = 0; i < card.getCount(); i++){ 
-				fullDeck.add(card.getCost()); }
+				fullDeck.add(card.getCost()); 
+			}
 		}
 		return fullDeck;
-		
 	}
 	
 	public static double compare(List<Card> indeck1, List<Card> indeck2){
