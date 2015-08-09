@@ -48,7 +48,7 @@ public class JSONCardParser {
 	
 	public static void main(String[] args) {
 		JSONCardParser parser = new JSONCardParser();
-		Card c = parser.getCardByName("Leeroy Jenkins");
+		Card c = parser.getCardByName("Ancestral Healing");
 		System.out.println(c.toString());
 	}
 }
