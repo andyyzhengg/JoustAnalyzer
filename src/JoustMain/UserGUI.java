@@ -1,6 +1,8 @@
 package JoustMain;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -17,6 +19,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class UserGUI extends Application {
+	
 	@Override
 	public void start(Stage window) {
 		GridPane grid = new GridPane();
@@ -30,10 +33,14 @@ public class UserGUI extends Application {
 		Label opponentLabel = new Label("Opponent's Deck:");
 		Label playerLabel = new Label("Player's Deck:");
 		Button calculateButton = new Button("Calculate");
+		
 		HBox hbBtn = new HBox(20);
 		hbBtn.setAlignment(Pos.CENTER);
 		hbBtn.getChildren().add(calculateButton);
+		
 		title.setFont(Font.font("Comic Sans", FontWeight.NORMAL, 20));
+		result.setFill(Color.INDIGO);
+		
 		grid.add(title, 0, 0, 2, 1);
 		grid.add(opponentLabel, 0, 1);
 		grid.add(playerLabel, 1, 1);
@@ -42,8 +49,12 @@ public class UserGUI extends Application {
 		grid.add(hbBtn, 1, 3);
 		grid.add(result, 0, 4);
 		
-		result.setFill(Color.INDIGO);
-		result.setText("Sample results!");
+		calculateButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				result.setText("Size: " + opponentDeckList.getParagraphs().size());	
+			}
+		});
 		
 		Scene scene = new Scene(grid, 600, 400);
 		
@@ -51,6 +62,7 @@ public class UserGUI extends Application {
 		window.setScene(scene);
 		window.show();
 	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
