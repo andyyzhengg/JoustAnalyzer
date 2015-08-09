@@ -12,9 +12,10 @@ public class Model {
 	public static List<Integer> convertDeck(List<Card> deck){
 		List<Integer> fullDeck = new ArrayList();
 		for(Card card : deck) {
+			if(card != null){
 			for(int i = 0; i < card.getCount(); i++){ 
 				fullDeck.add(card.getCost()); 
-			}
+			}}
 		}
 		return fullDeck;
 	}
@@ -36,23 +37,23 @@ public class Model {
 		return wins/totals;
 	}
 	
-	public static void main(String[] args){
-		List<Card> deck1 = new ArrayList();
-		List<Card> deck2 = new ArrayList();
-		deck1.add(new Card("A",1,2));
-		deck1.add(new Card("A",2,2));
-		deck1.add(new Card("A",2,2));
-		deck1.add(new Card("A",10,1));
-		deck1.add(new Card("A",3,2));
-		
-		deck2.add(new Card("A",1,2));
-		deck2.add(new Card("A",2,2));
-		deck2.add(new Card("A",3,2));
-		deck2.add(new Card("A",5,2));
-		
-		double winperc = compare(deck1, deck2);
-		DecimalFormat f = new DecimalFormat("##.00");
-		System.out.println(f.format(winperc*100));
-		
-	}
+//	public static void main(String[] args){
+//		List<Card> deck1 = new ArrayList();
+//		List<Card> deck2 = new ArrayList();
+//		deck1.add(new Card("A",1,2));
+//		deck1.add(new Card("A",2,2));
+//		deck1.add(new Card("A",2,2));
+//		deck1.add(new Card("A",10,1));
+//		deck1.add(new Card("A",3,2));
+//		
+//		deck2.add(new Card("A",1,2));
+//		deck2.add(new Card("A",2,2));
+//		deck2.add(new Card("A",3,2));
+//		deck2.add(new Card("A",5,2));
+//		
+//		double winperc = compare(deck1, deck2);
+//		DecimalFormat f = new DecimalFormat("##.00");
+//		System.out.println(f.format(winperc*100));
+//		
+//	}
 }

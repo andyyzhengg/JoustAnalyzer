@@ -50,10 +50,10 @@ public class UserGUI extends Application {
 		result.setFill(Color.INDIGO);
 		
 		grid.add(title, 0, 0, 2, 1);
-		grid.add(opponentLabel, 0, 1);
-		grid.add(playerLabel, 1, 1);
-		grid.add(opponentDeckList, 0, 2);
-		grid.add(playerDeckList, 1, 2);
+		grid.add(opponentLabel, 1, 1);
+		grid.add(playerLabel, 0, 1);
+		grid.add(opponentDeckList, 1, 2);
+		grid.add(playerDeckList, 0, 2);
 		grid.add(hbBtn, 1, 3);
 		grid.add(result, 0, 4);
 		
@@ -61,7 +61,7 @@ public class UserGUI extends Application {
 			@Override
 			public void handle(ActionEvent e) {
 				try {
-					result.setText(controller.calculate(opponentDeckList.getParagraphs(), playerDeckList.getParagraphs()));
+					result.setText(controller.calculate(playerDeckList.getParagraphs(), opponentDeckList.getParagraphs()));
 				} 
 				catch(Exception ex) {
 					result.setText("Error!");
