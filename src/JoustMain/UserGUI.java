@@ -1,5 +1,9 @@
 package JoustMain;
 
+import JoustController.ControllerA;
+import JoustController.NoJSONController;
+import JoustModel.Model;
+import JoustView.CopyPasta;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,13 +19,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class UserGUI extends Application {
+	ControllerA controller;
+	Model model;
+	CopyPasta view;
 	
 	@Override
 	public void start(Stage window) {
+		controller = new NoJSONController();
+		view = new CopyPasta();
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
 		grid.setHgap(10);
@@ -52,7 +60,8 @@ public class UserGUI extends Application {
 		calculateButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				result.setText("Size: " + opponentDeckList.getParagraphs().size());	
+				controller.calculate(opponentDeckList.getParagraphs(), playerDeckList.getParagraphs());	
+				//result.setText();
 			}
 		});
 		
