@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.json.*;
 
 public class JSONCardParser {
-	private static String fileName = "data/AllSets.json";
+	private static String fileName = "AllSets.json";
 	public String JSONLine;
 	private void readJSONLine() {
 		String line;
