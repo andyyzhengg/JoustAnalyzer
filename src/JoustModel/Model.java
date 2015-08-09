@@ -42,7 +42,7 @@ public class Model {
 		deck1.add(new Card("A",1,2));
 		deck1.add(new Card("A",2,2));
 		deck1.add(new Card("A",2,2));
-		deck1.add(new Card("A",3,1));
+		deck1.add(new Card("A",10,1));
 		deck1.add(new Card("A",3,2));
 		
 		deck2.add(new Card("A",1,2));
